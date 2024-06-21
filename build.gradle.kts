@@ -9,6 +9,8 @@ plugins {
 group = "com.redmagic"
 version = "1.0"
 
+val mcVersion = "1.20.4"
+
 repositories {
     mavenCentral()
     maven {
@@ -26,21 +28,20 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.redmagic:UndefinedAPI:0.4.32")
-    implementation("net.wesjd:anvilgui:1.9.2-SNAPSHOT")
+    implementation("com.undefined:api:0.5.33:mappped")
 }
 
 tasks {
 
     shadowJar {
-        archiveFileName.set("UndefinedToggles-shadow.jar")
+        archiveFileName.set("${this.name}-shadow.jar")
     }
 
     compileKotlin {
         kotlinOptions.jvmTarget = "17"
     }
     runServer {
-        minecraftVersion("1.20.4")
+        minecraftVersion(mcVersion)
     }
 }
 
