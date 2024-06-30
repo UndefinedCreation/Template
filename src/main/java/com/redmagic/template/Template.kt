@@ -8,8 +8,7 @@ class Template : JavaPlugin() {
     val undefinedAPI = UndefinedAPI(this)
 
     override fun onEnable() {
-
-
+        // Plugin startup logic
 
     }
 

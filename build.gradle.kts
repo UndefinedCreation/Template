@@ -2,7 +2,6 @@ plugins {
     java
     kotlin("jvm") version "1.9.22"
     id("com.github.johnrengelman.shadow") version "8.1.1"
-
     id("xyz.jpenilla.run-paper") version "2.2.2"
 }
 
@@ -18,7 +17,7 @@ repositories {
         url = uri("https://hub.spigotmc.org/nexus/content/repositories/snapshots/")
     }
     maven {
-        name = "undefinedapiRepo"
+        name = "undefinedRepo"
         url = uri("https://repo.undefinedcreation.com/repo")
     }
     maven("https://repo.codemc.io/repository/maven-snapshots/")
@@ -28,11 +27,10 @@ repositories {
 dependencies {
     compileOnly("org.spigotmc:spigot-api:1.20.4-R0.1-SNAPSHOT")
     implementation("org.jetbrains.kotlin:kotlin-stdlib")
-    implementation("com.undefined:api:0.5.33:mappped")
+    implementation("com.undefined:api:0.5.42:mappped")
 }
 
 tasks {
-
     shadowJar {
         archiveFileName.set("${this.name}-shadow.jar")
     }
@@ -45,6 +43,6 @@ tasks {
     }
 }
 
-kotlin{
+kotlin {
     jvmToolchain(17)
 }
