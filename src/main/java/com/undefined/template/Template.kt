@@ -1,14 +1,15 @@
-package com.redmagic.template
+package com.undefined.template
 
-import com.redmagic.undefinedapi.UndefinedAPI
+import com.undefined.api.UndefinedAPI
 import org.bukkit.plugin.java.JavaPlugin
 
 class Template : JavaPlugin() {
 
-    val undefinedAPI = UndefinedAPI(this)
+    lateinit var undefinedAPI: UndefinedAPI
 
     override fun onEnable() {
         // Plugin startup logic
+        undefinedAPI = UndefinedAPI(this)
 
     }
 
